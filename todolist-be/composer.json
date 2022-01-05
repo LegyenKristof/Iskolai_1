@@ -1,0 +1,13 @@
+{
+    "name": "petrik/todolist-15wl",
+    "require": {
+        "slim/slim": "^4.9",
+        "slim/psr7": "^1.5",
+        "illuminate/database": "^8.74"
+    },
+    "autoload": {
+        "psr-4": {
+            "Petrik\\Todolist15wl\\": "src/"
+        }
+    }
+}
