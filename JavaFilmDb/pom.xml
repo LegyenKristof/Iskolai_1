@@ -38,6 +38,12 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,7 +66,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>hu.petrik.javafilmdb/hu.petrik.javafilmdb.HelloApplication</mainClass>
+                            <mainClass>hu.petrik.javafilmdb/hu.petrik.javafilmdb.FilmApp</mainClass>
                         </configuration>
                     </execution>
                 </executions>
