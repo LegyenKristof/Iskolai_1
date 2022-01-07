@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.Integer?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Cim" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField GridPane.columnIndex="1" />
+      <Label text="Kategória" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Hossz (perc)" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Értékelés" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Label>
+      <Spinner maxWidth="200.0" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <valueFactory>
+              <IntegerSpinnerValueFactory initialValue="100" min="01" max="999" amountToStepBy="1"/>
+          </valueFactory>
+      </Spinner>
+       <ChoiceBox maxWidth="200.0" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <Integer fx:value="1" />
+                   <Integer fx:value="2" />
+                   <Integer fx:value="3" />
+                   <Integer fx:value="4" />
+                   <Integer fx:value="5" />
+                   <Integer fx:value="6" />
+                   <Integer fx:value="7" />
+                   <Integer fx:value="8" />
+                   <Integer fx:value="9" />
+                   <Integer fx:value="10" />
+               </FXCollections>
+           </items>
+       </ChoiceBox>
+   </children>
+</GridPane>
