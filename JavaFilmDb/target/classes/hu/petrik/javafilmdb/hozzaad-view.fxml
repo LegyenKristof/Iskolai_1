@@ -50,7 +50,7 @@
       </Label>
       <Spinner fx:id="inHossz" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
           <valueFactory>
-              <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="100" max="999" min="01" />
+              <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="100" max="999" min="01" editable="1"/>
           </valueFactory>
       </Spinner>
        <ChoiceBox fx:id="inErtekeles" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -68,6 +68,9 @@
                    <Integer fx:value="10" />
                </FXCollections>
            </items>
+           <value>
+               <Integer fx:value="1" />
+           </value>
        </ChoiceBox>
       <Button maxWidth="300.0" minWidth="300.0" mnemonicParsing="false" onAction="#hozzaad" prefWidth="300.0" text="Hozzáad" GridPane.columnSpan="2" GridPane.rowIndex="4" />
    </children>

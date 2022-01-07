@@ -1,14 +1,18 @@
 package hu.petrik.javafilmdb;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.sql.Time;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainController {
 
@@ -36,7 +40,22 @@ public class MainController {
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
+            hibaKiir(e);
         }
+    }
+
+    private void hibaKiir(Exception e){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Hiba");
+        alert.setHeaderText(e.getClass().toString());
+        alert.setContentText(e.getMessage());
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(() -> alert.show());
+            }
+        }, 500);
     }
 
     @FXML
@@ -45,6 +64,16 @@ public class MainController {
 
     @FXML
     public void hozzaadas(ActionEvent actionEvent) {
+        try{
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(FilmApp.class.getResource("hozzaad-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 300, 150);
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
